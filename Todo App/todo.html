@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>My ToDo App</title>
+    <link rel="stylesheet" href="todo.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js"; import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js"; const firebaseConfig = { apiKey: "AIzaSyByDKUYzGF0N5yt5XcQ-EU1-eS8b9Xprw4",
+        authDomain: "oib-todo-app.firebaseapp.com", databaseURL: "https://oib-todo-app-default-rtdb.firebaseio.com", projectId: "oib-todo-app", storageBucket: "oib-todo-app.appspot.com", messagingSenderId: "642622619435", appId: "1:642622619435:web:02af0fa690a2ad13754f6e",
+        measurementId: "G-3JMEQVKLYM" }; const app = initializeApp(firebaseConfig); const analytics = getAnalytics(app); const db = getFirestore();
+    </script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="background-image">
+        <!-- <img src="https://thumbs.gfycat.com/SimplisticTestyCanvasback-size_restricted.gif" alt="this is an image"> -->
+        <video src="img\video.mp4" autoplay loop></video>
+
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="tittle">
+                TODO APP
+            </div>
+            <div class="theme">
+                <img style="height: 30px;" src="img\sun.png" alt="this is a icon">
+            </div>
+        </div>
+
+        <div class="new-todo">
+            <div class="check">
+                <div class="check-mark">
+
+                </div>
+            </div>
+            <div class="new-input">
+                <form onsubmit="addItem(event)">
+                    <input id="todo-input" type="text" placeholder="Create a new ToDo Here">
+                </form>
+            </div>
+        </div>
+        <div class="todo-items-wrapper">
+            <div class="todo-items">
+                <div class="todo-item">
+                    <div class="check">
+                        <div class="check-mark">
+                            <img style=" height:12px" src="img/tick.png" alt="">
+                        </div>
+                    </div>
+                    <div class="todo-text">
+                        Cut the lawn
+                    </div>
+                </div>
+                <div class="todo-item">
+                    <div class="check">
+                        <div class="check-mark">
+                            <img style="height: 12px;" src="img/tick.png" alt="">
+                        </div>
+                    </div>
+                    <div class="todo-text">
+                        Cut the lawn
+                    </div>
+                </div>
+                <div class="todo-item">
+                    <div class="check">
+                        <div class="check-mark">
+                            <img style="height: 12px;" src="img/tick.png" alt="">
+                        </div>
+                    </div>
+                    <div class="todo-text">
+                        Cut the lawn
+                    </div>
+                </div>
+            </div>
+            <div class="todo-items-info">
+                <div class="items-left">
+                    5 Items Left
+                </div>
+                <div class="items-status">
+                    <span>All</span>
+                    <span>Active</span>
+                    <span>Completed</span>
+                </div>
+                <div class="items-clear">
+                    <span>Clear Complete</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
