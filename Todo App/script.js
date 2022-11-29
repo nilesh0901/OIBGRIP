@@ -1,60 +1,50 @@
-function addItem(event) {
-    event.preventDefault();
-    let text_inputed = document.getElementById("todo-input")
-    db.collection("todo-items").add({
-        text: text_inputed.value,
-        status: "active"
-    })
-    text_inputed = "";
-}
 
-function getItems() {
+function getItems(){
     db.collection("todo-items").onSnapshot((snapshot) => {
-        console.log(snapshot)
         let items = [];
         snapshot.docs.forEach((doc) => {
             items.push({
-                id: doc.id,
+                id: doc.id, 
                 ...doc.data()
             })
-        });
+        })
         generateItems(items);
     })
 }
 
-
-function generateItems(items) {
-
-    let itemsHTML = "";
+function generateItems(items){
+    let todoItems = []
     items.forEach((item) => {
-        console.log(item)
-        itemsHTML += `
-            <div class="todo-item">
-                <div class="check">
-                    <div data-id="${item.id}" class="check-mark ${item.status == "completed" ? "checked": ""}" >
-                        <img style="height: 12px;" src="img/tick.png" alt="">
-                    </div>
-                </div>
-                <div class="todo-text">
-                    ${item.text}
-                </div>
-            </div>
-        `
-    })
-    document.querySelector(".todo-items").innerHTML = itemsHTML;
-    createEventListener();
-}
-
-function createEventListener() {
-    let todoCheckMarks = document.querySelectorAll(".todo-item .check-mark");
-    todoCheckMarks.forEach((checkMark) => {
-        checkMark.addEventListener("click", function() {
-            markCompleted(checkMark.dataset.id);
+        let todoItem = document.createElement("div");
+        todoItem.classList.add("todo-item");
+        let checkContainer = document.createElement("div");
+        checkContainer.classList.add("check");
+        let checkMark = document.createElement("div");
+        checkMark.classList.add("check-mark");
+        checkMark.innerHTML = '<img src="assets/icon-check.svg">';
+        checkMark.addEventListener("click", function(){
+            markCompleted(item.id);
         })
+        checkContainer.appendChild(checkMark);
+
+        let todoText = document.createElement("div");
+        todoText.classList.add("todo-text");
+        todoText.innerText = item.text;
+
+        if(item.status == "completed"){
+            checkMark.classList.add("checked");
+            todoText.classList.add("checked");
+        }
+        todoItem.appendChild(checkContainer);
+        todoItem.appendChild(todoText);
+        todoItems.push(todoItem)
     })
+    document.querySelector(".todo-items").replaceChildren(...todoItems);
 }
 
-function addItem(event) {
+
+
+function addItem(event){
     event.preventDefault();
     let text = document.getElementById("todo-input");
     let newItem = db.collection("todo-items").add({
@@ -64,11 +54,11 @@ function addItem(event) {
     text.value = "";
 }
 
-function markCompleted(id) {
+function markCompleted(id){
     let item = db.collection("todo-items").doc(id);
     item.get().then(function(doc) {
         if (doc.exists) {
-            if (doc.data().status == "active") {
+            if(doc.data().status == "active"){
                 item.update({
                     status: "completed"
                 })
@@ -80,4 +70,5 @@ function markCompleted(id) {
         }
     })
 }
+
 getItems();

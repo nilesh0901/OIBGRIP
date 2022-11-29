@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,40 +7,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <title>My ToDo App</title>
+    <title>To Do List App</title>
     <link rel="stylesheet" href="todo.css">
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="firebase.js"></script>
-    <script src="script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="./firebase.js"></script>
+    <script src="./script.js"></script>
 </head>
-
 <body>
     <div class="background-image">
-        <!-- <img src="https://thumbs.gfycat.com/SimplisticTestyCanvasback-size_restricted.gif" alt="this is an image"> -->
-        <video src="img\video.mp4" autoplay loop></video>
-
+        <img src="assets/bg-desktop-dark.jpg">
     </div>
     <div class="container">
         <div class="header">
-            <div class="tittle">
-                TODO APP
+            <div class="title">
+                TODO
             </div>
             <div class="theme">
-                <img style="height: 30px;" src="img\sun.png" alt="this is a icon">
+                <img src="assets/icon-sun.svg">
             </div>
         </div>
-
         <div class="new-todo">
             <div class="check">
                 <div class="check-mark">
-
                 </div>
             </div>
-            <div class="new-input">
+            <div class="new-todo-input">
                 <form onsubmit="addItem(event)">
-                    <input id="todo-input" type="text" placeholder="Create a new ToDo Here">
+                    <input id="todo-input" type="text" placeholder="Create a new todo..." />
                 </form>
             </div>
         </div>
@@ -49,8 +43,18 @@
             <div class="todo-items">
                 <div class="todo-item">
                     <div class="check">
+                        <div class="check-mark checked">
+                            <img src="assets/icon-check.svg">
+                        </div>
+                    </div>
+                    <div class="todo-text checked">
+                        Cut the lawn
+                    </div>
+                </div>
+                <div class="todo-item">
+                    <div class="check">
                         <div class="check-mark">
-                            <img style=" height:12px" src="img/tick.png" alt="">
+                            
                         </div>
                     </div>
                     <div class="todo-text">
@@ -60,17 +64,6 @@
                 <div class="todo-item">
                     <div class="check">
                         <div class="check-mark">
-                            <img style="height: 12px;" src="img/tick.png" alt="">
-                        </div>
-                    </div>
-                    <div class="todo-text">
-                        Cut the lawn
-                    </div>
-                </div>
-                <div class="todo-item">
-                    <div class="check">
-                        <div class="check-mark">
-                            <img style="height: 12px;" src="img/tick.png" alt="">
                         </div>
                     </div>
                     <div class="todo-text">
@@ -80,21 +73,21 @@
             </div>
             <div class="todo-items-info">
                 <div class="items-left">
-                    5 Items Left
+                    5 items left
                 </div>
-                <div class="items-status">
-                    <span>All</span>
+                <div class="items-statuses">
+                    <span class="active">All</span>
                     <span>Active</span>
                     <span>Completed</span>
                 </div>
                 <div class="items-clear">
-                    <span>Clear Complete</span>
+                    <span>Clear Completed</span>
                 </div>
             </div>
         </div>
     </div>
+    
 
-
+    
 </body>
-
 </html>
