@@ -66,9 +66,10 @@
     align-items: center;
 }
 
-.check-mark img {
+
+/* .check-mark img {
     visibility: hidden;
-}
+} */
 
 .check-mark {
     width: 30px;
@@ -82,7 +83,7 @@
     transition: 0.25s;
 }
 
-.check-mark:hover {
+.check-mark:hover .check-mark.checked {
     border-color: linear-gradient(135deg, #55DDFF 0%, #C058F3 100%);
     background: linear-gradient(135deg, #3fd0f5 0%, #dde74c 100%);
 }
