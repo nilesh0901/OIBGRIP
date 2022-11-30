@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +17,7 @@
     <script src="./firebase.js"></script>
     <script src="./script.js"></script>
 </head>
+
 <body>
     <div class="background-image">
         <img src="assets\pexels-johannes-plenio-1103970.jpg">
@@ -38,7 +40,7 @@
                 <form onsubmit="addItem(event)">
                     <input id="todo-input" type="text" placeholder="Create a new todo..." />
                 </form>
-                
+
             </div>
         </div>
         <div class="todo-items-wrapper">
@@ -53,21 +55,22 @@
             </div>
             <div class="todo-items-info">
                 <div class="items-left">
-                    5 items left
+                    - items left
                 </div>
                 <div class="items-statuses">
-                    <span class="active">All</span>
-                    <span>Active</span>
-                    <span>Completed</span>
+                    <span class="all">All</span>
+                    <span class="only-active">Active</span>
+                    <span class="only-completed">Completed</span>
                 </div>
                 <div class="items-clear">
-                    <span>Clear Completed</span>
+                    <span class="clear-all">Clear Completed</span>
                 </div>
             </div>
         </div>
     </div>
-    
 
-    
+
+
 </body>
+
 </html>
