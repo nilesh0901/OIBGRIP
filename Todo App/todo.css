@@ -76,7 +76,7 @@ body {
 }
 
 .check-mark img {
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 .check-mark.checked img,

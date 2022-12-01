@@ -94,9 +94,9 @@ function generateItems(items) {
             // console.log(e.target)
             e.stopPropagation()
             completed_items.forEach((ee) => {
-                    db.collection('todo-items').doc(ee.id).delete();
-                })
-                // console.log(id1);
+                db.collection('todo-items').doc(ee.id).delete();
+            })
+
 
             console.log("All completed Data Deleted Successfully")
 
