@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,20 +8,24 @@
     <title>Task1 Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <h1 class="text-center">Calculator</h1>
 
     <table class="table">
         <tr>
-            <td colspan="5"><input type="text" id="txtInp" /></td>
+            <td class="screen" colspan="5"><!--<input type="text" id="txtInp" /> -->
+                <div style="height: auto; padding: 0 10px;">
+                    <h1 id="output"></h1>
+                    <p id="input"></p>
+                </div>
+            </td>
         </tr>
         <tr>
             <td><button onclick="storedata('(')">(</button></td>
             <td><button onclick="storedata(')')">)</button></td>
-            <td><button onclick="storedata('ans')">ans</button></td>
-            <td><button onclick="deldata()">del</button></td>
-            <td><button onclick="clsdata()">clear</button></td>
+            <td><button onclick="storedata('ANS')">ANS</button></td>
+            <td><button onclick="storedata('DEL')">DEL</button></td>
+            <td><button onclick="storedata('CLEAR')">CLEAR</button></td>
         </tr>
         <tr>
             <td><button onclick="storedata('7')">7</button></td>
@@ -35,15 +38,13 @@
             <td><button onclick="storedata('4')">4</button></td>
             <td><button onclick="storedata('5')">5</button></td>
             <td><button onclick="storedata('6')">6</button></td>
-            <td><button onclick="storedata('*')">x</button></td>
-            <td><button onclick="storedata('/')">÷</button></td>
+            <td><button onclick="storedata('x')">x</button></td>
+            <td><button onclick="storedata('÷')">÷</button></td>
         </tr>
         <tr>
             <td><button onclick="storedata('1')">1</button></td>
             <td><button onclick="storedata('2')">2</button></td>
             <td><button onclick="storedata('3')">3</button></td>
-            <td><button onclick="storedata('3')">3</button></td>
-            <td><button onclick="storedata('3')">3</button></td>s
             <td><button onclick="storedata('+')">+</button></td>
             <td><button onclick="storedata('-')">-</button></td>
         </tr>
@@ -51,10 +52,10 @@
             <td><button onclick="storedata('.')">.</button></td>
             <td><button onclick="storedata('0')">0</button></td>
             <td><button onclick="storedata('±')">±</button></td>
-            <td colspan="2"><button onclick="caldata()" id="enter">ENTER</button></td>
+            <td colspan="2"><button id="enter_button" onclick="storedata('ENTER')">ENTER</button></td>
         </tr>
     </table>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.1/math.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>

@@ -23,11 +23,12 @@ function getItems() {
 
         console.log(active_items)
         console.log(completed_items)
-
+        window.location.reload();
         generateItems(items);
 
         let all = document.querySelector(".all")
         all.addEventListener("click", (e) => {
+
             generateItems(items);
         })
 

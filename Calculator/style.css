@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Domine&display=swap');
 html, body{
     height: 100%;
     width: 100%;
@@ -6,19 +6,31 @@ html, body{
 }
 
 .table{
+    table-layout: fixed;
+    width: 600px;
     margin: auto;
     background: #00005C;
     border: 15px solid #00005C;
     border-radius: 15px;
-    width: 50px;
-    height: 50px;
+    text-align: center;
+    
+}
+.screen{
+    height: 90px;
+    border-radius: 5px;
+    background-color: grey;
+    text-align: end;
+    padding-right: 30px;
+    font-size: 30px;
 }
 
 .table tr td{
     padding: 3px;
+
 }
 
 .table button{
+    text-align: center;
     width: 100%;
     height: 100%;
     padding: 18px;
@@ -27,10 +39,11 @@ html, body{
     border-radius: 9px;
     cursor: pointer;
     color: #00005C;
+    font-size: large;
     font-family:Arial, Helvetica, sans-serif;
-    font-style:calc();
     font-weight: bold;
     background-color: #DEBACE;
+    transition: 0.4s;
 }
 
 button:hover {
@@ -55,10 +68,10 @@ button:hover {
     text-align: center;
 }
 
-#enter{
-    background-color: #bf9de1b5;
+#enter_button{
+    background-color: #bf84faf6;
 }
 
-#enter:hover {
-    background-color: #eaeaea;
+#enter_button:hover {
+    background-color: red;
   }
