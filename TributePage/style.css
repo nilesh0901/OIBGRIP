@@ -3,8 +3,10 @@ html {
     font-family: Noto Serif, serif;
     font-size: 10px;
     font-weight: 150;
-    color: black;
+    color: white;
     background-image: url("light_faded_background-design_HD_wallpaper_1920x1080.jpg");
+    border-color: linear-gradient(60deg, #121313 30%, #99969b 100%);
+    background: linear-gradient(60deg, #121313 30%, #99969b 100%);
 }
 
 body {
@@ -27,20 +29,20 @@ body {
 }
 
 a {
-    color: black;
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
 h1 {
     font-family: Noto Sans JP, sans-serif;
     font-size: 4rem;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .subtitle {
     font-family: Noto Sans JP, sans-serif;
     font-size: 2rem;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 h2 {
@@ -55,7 +57,7 @@ h3 {
     font-size: 2rem;
     font-weight: 600;
     margin: 40px 0 5px 0;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 section {
@@ -78,13 +80,12 @@ section {
 blockquote {
     font-family: Special Elite, sans-serif;
     font-size: 2.25rem;
-    background-color: ghostwhite;
+    background-color: rgb(70, 68, 68);
     margin: 30px 3% 0 3%;
     padding: 10px 0% 20px 0%;
     max-width: 100%;
     height: auto;
     border-radius: 25px;
-    background-image: url("light_faded_background-design_HD_wallpaper_1920x1080.jpg");
 }
 
 cite {
